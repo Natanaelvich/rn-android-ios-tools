@@ -1,0 +1,63 @@
+{
+  "name": "rn-android-ios-tools",
+  "displayName": "RN Android IOS Tools",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:rn-android-ios-tools.helloWorld"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+        "activitybar": [
+            {
+                "id": "rn-android-ios-tools-container",
+                "title": "RN Android IOS Tools",
+                "icon": "resources/rn-android-ios-tools-container.svg"
+            }
+        ]
+    },
+    "views": {
+        "rn-android-ios-tools-container": [
+            {
+                "id": "rn-android-ios-tools-view",
+                "name": "",
+                "when": "!rn-android-ios-tools-is-empty"
+            }
+        ]
+    },
+    "commands": [
+      {
+        "command": "rn-android-ios-tools.helloWorld",
+        "title": "RN Android Test"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3",
+    "@vscode/test-electron": "^2.2.0"
+  }
+}

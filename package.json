@@ -27,8 +27,12 @@
         "rn-android-ios-tools-container": [
             {
                 "id": "rn-android-ios-tools-view",
-                "name": "",
+                "name": "Ola dev",
                 "when": "!rn-android-ios-tools-is-empty"
+            },
+            {
+                "id": "rn-android-ios-tools-view2",
+                "name": "Ola dev"
             }
         ]
     },

@@ -32,11 +32,6 @@ export function activate(context: vscode.ExtensionContext) {
 // This method is called when your extension is deactivated
 export function deactivate() {}
 
-vscode.window.registerTreeDataProvider(
-  "rn-android-ios-tools-view2",
-  new EmulatorProvider()
-);
-
 vscode.window.createTreeView("rn-android-ios-tools-view2", {
   treeDataProvider: new EmulatorProvider(),
 });

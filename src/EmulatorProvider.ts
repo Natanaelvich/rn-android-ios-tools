@@ -2,27 +2,27 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 
-export class NodeDependenciesProvider implements vscode.TreeDataProvider<Dependency> {
+export class EmulatorProvider implements vscode.TreeDataProvider<Emulator> {
   constructor() {}
 
-  getTreeItem(element: Dependency): vscode.TreeItem {
+  getTreeItem(element: Emulator): vscode.TreeItem {
     return element;
   }
 
-  getChildren(element?: Dependency): Thenable<Dependency[]> {
+  getChildren(element?: Emulator): Thenable<Emulator[]> {
     if (element) {
         return Promise.resolve(
           // this.getDepsInPackageJson(
           //   path.join(this.workspaceRoot, 'node_modules', element.label, 'package.json')
           // )
-          [new Dependency("Teste", "v1.1.1",vscode.TreeItemCollapsibleState.Collapsed)]
+          [new Emulator("Pixel 3a", "31",vscode.TreeItemCollapsibleState.Collapsed)]
         );
     } else {
           return Promise.resolve(
             // this.getDepsInPackageJson(
             //   path.join(this.workspaceRoot, 'node_modules', element.label, 'package.json')
             // )
-            [new Dependency("Teste", "v1.1.1",vscode.TreeItemCollapsibleState.Collapsed)]
+            [new Emulator("Pixel 3a", "31",vscode.TreeItemCollapsibleState.Collapsed)]
           );
         // return Promise.resolve(this.getDepsInPackageJson(packageJsonPath));
     }
@@ -39,15 +39,15 @@ export class NodeDependenciesProvider implements vscode.TreeDataProvider<Depende
   }
 }
 
-class Dependency extends vscode.TreeItem {
+class Emulator extends vscode.TreeItem {
   constructor(
     public readonly label: string,
-    private version: string,
+    private api: string,
     public readonly collapsibleState: vscode.TreeItemCollapsibleState
   ) {
     super(label, collapsibleState);
-    this.tooltip = `${this.label}-${this.version}`;
-    this.description = this.version;
+    this.tooltip = `${this.label}-${this.api}`;
+    this.description = this.api;
   }
 
   iconPath = {

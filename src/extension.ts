@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import { NodeDependenciesProvider } from "./NodeDependenciesProvider";
+import { EmulatorProvider } from "./EmulatorProvider";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -34,9 +34,9 @@ export function deactivate() {}
 
 vscode.window.registerTreeDataProvider(
   "rn-android-ios-tools-view2",
-  new NodeDependenciesProvider()
+  new EmulatorProvider()
 );
 
 vscode.window.createTreeView("rn-android-ios-tools-view2", {
-  treeDataProvider: new NodeDependenciesProvider(),
+  treeDataProvider: new EmulatorProvider(),
 });

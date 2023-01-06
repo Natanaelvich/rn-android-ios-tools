@@ -3,6 +3,7 @@
   "displayName": "RN Android IOS Tools",
   "description": "",
   "version": "0.0.1",
+  "author": "taelima1997@gmail.com",
   "engines": {
     "vscode": "^1.74.0"
   },
